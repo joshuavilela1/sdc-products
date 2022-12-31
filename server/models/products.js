@@ -31,8 +31,8 @@ module.exports = {
     (SELECT jsonb_agg(results) AS results FROM (SELECT id as style_id, name, original_price, sale_price, default_style AS "default?",
     (SELECT jsonb_agg(photos) AS photos FROM (SELECT thumbnail_url, url FROM photos WHERE styleId = styles.id) photos),
     (SELECT json_object_agg(id, (json_build_object('quantity', quantity, 'size', size))) AS skus FROM skus WHERE styleId = styles.id)
-    FROM styles WHERE product_id = 1) results)
-    FROM products WHERE id = 1`)
+    FROM styles WHERE product_id = ${product_id}) results)
+    FROM products WHERE id = ${product_id}`)
     .then(({rows}) => cb(null, rows[0]))
     .catch((err) => cb(err));
   },

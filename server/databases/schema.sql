@@ -66,6 +66,15 @@ CREATE TABLE Related (
 \COPY Skus FROM './CSV/skus.csv' DELIMITER ',' CSV HEADER;
 \COPY Related FROM './CSV/related.csv' DELIMITER ',' CSV HEADER;
 
+-- Create Indices for each foreign key for quicker data retrieval
+
+CREATE INDEX features_pid on features(product_id);
+CREATE INDEX styles_pid on styles(product_id);
+CREATE INDEX photos_sid on photos(styleId);
+CREATE INDEX skus_sid on skus(styleId);
+CREATE INDEX related_pid on related(current_product_id);
+
+
 
 
 
