@@ -12,6 +12,7 @@
     "mongoose": "^6.8.1",
     "optionator": "^0.9.1",
     "pg": "^8.8.0",
+    "postgres": "^3.3.2",
     "uuid": "^9.0.0"
   },
   "main": "index.js",
