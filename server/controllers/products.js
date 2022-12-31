@@ -5,7 +5,16 @@ const {
 module.exports = {
 
   getProducts: (req, res) => {
-
+    //need page and count and default amounts
+    const page = req.query.page || 1;
+    const count = req.query.count || 5;
+    getProductsDB(page, count, (err, results) => {
+      if (!err) {
+        res.send(results).status(200);
+      } else {
+        res.send(err).status(500);
+      }
+    });
   },
 
   getProductInfo: (req, res) => {
@@ -15,7 +24,7 @@ module.exports = {
       } else {
         res.send(err).status(500);
       }
-    })
+    });
   },
 
   getStyles: (req, res) => {
@@ -25,7 +34,7 @@ module.exports = {
       } else {
         res.send(err).status(500);
       }
-    })
+    });
   },
 
   getRelated: (req, res) => {
