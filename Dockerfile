@@ -1,5 +1,5 @@
 
-FROM node:16
+FROM node:12
 
 WORKDIR /sdc_products
 
@@ -12,3 +12,5 @@ COPY . .
 ENV PORT=3000
 
 EXPOSE 3000
+
+CMD ["npm", "start"]
