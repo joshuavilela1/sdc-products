@@ -4,6 +4,7 @@
   "description": "Chanel SDC HR",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
+    "autocannon": "^7.10.0",
     "axios": "^1.2.1",
     "cors": "^2.8.5",
     "csv-parser": "^3.0.0",
@@ -28,7 +29,7 @@
     "start": "npx nodemon --watch server server/index.js",
     "client-dev": "npx webpack --watch",
     "build": "npx webpack",
-    "test" : "jest"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -66,4 +67,3 @@
     "webpack-dev-server": "^4.11.1"
   }
 }
-
