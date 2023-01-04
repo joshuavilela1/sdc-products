@@ -74,10 +74,13 @@ CREATE INDEX photos_sid on photos(styleId);
 CREATE INDEX skus_sid on skus(styleId);
 CREATE INDEX related_pid on related(current_product_id);
 
+-- Cluster the Indicices to reoder table based on the index
 
-
-
-
+CLUSTER Features USING features_pid;
+CLUSTER Styles USING styles_pid;
+CLUSTER Photos USING photos_sid;
+CLUSTER Skus USING skus_sid;
+CLUSTER Related using related_pid;
 
 
 
