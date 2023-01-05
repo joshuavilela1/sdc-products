@@ -66,9 +66,21 @@ CREATE TABLE Related (
 \COPY Skus FROM './CSV/skus.csv' DELIMITER ',' CSV HEADER;
 \COPY Related FROM './CSV/related.csv' DELIMITER ',' CSV HEADER;
 
+-- Create Indices for each foreign key for quicker data retrieval
 
+CREATE INDEX features_pid on features(product_id);
+CREATE INDEX styles_pid on styles(product_id);
+CREATE INDEX photos_sid on photos(styleId);
+CREATE INDEX skus_sid on skus(styleId);
+CREATE INDEX related_pid on related(current_product_id);
 
+-- Cluster the Indicices to reoder table based on the index
 
+CLUSTER Features USING features_pid;
+CLUSTER Styles USING styles_pid;
+CLUSTER Photos USING photos_sid;
+CLUSTER Skus USING skus_sid;
+CLUSTER Related USING related_pid;
 
 
 
