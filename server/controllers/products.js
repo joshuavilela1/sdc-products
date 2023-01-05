@@ -1,9 +1,8 @@
 const {
-  products: {getProductsDB, getProductInfoDB, getStylesDB, getRelatedDB}
+  products: { getProductsDB, getProductInfoDB, getStylesDB, getRelatedDB },
 } = require('../models');
 
 module.exports = {
-
   getProducts: (req, res) => {
     //need page and count and default amounts
     const page = req.query.page || 1;
@@ -44,6 +43,6 @@ module.exports = {
       } else {
         res.send(err).status(500);
       }
-    })
-  }
-}
+    });
+  },
+};

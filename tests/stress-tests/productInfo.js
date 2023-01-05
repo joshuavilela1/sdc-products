@@ -1,5 +1,5 @@
-import http from "k6/http";
-import { check, sleep } from "k6";
+import http from 'k6/http';
+import { check, sleep } from 'k6';
 import { randomIntBetween } from 'https://jslib.k6.io/k6-utils/1.2.0/index.js';
 import { Counter } from 'k6/metrics';
 
@@ -18,13 +18,13 @@ export const options = {
       timeUnit: '1s', // 1000 times per second (1000 RPS)
       duration: '25s',
       preAllocatedVUs: 500, // start with this amount of virtual users
-      maxVUs: 1050 // Max amount of VU's in case allocated is not enough
-    }
+      maxVUs: 1050, // Max amount of VU's in case allocated is not enough
+    },
   },
   thresholds: {
     http_req_failed: ['rate<0.01'], //Error shoud be be below 1%
-    http_req_duration: ['p(95) < 50'] // response should be < 50ms
-  }
+    http_req_duration: ['p(95) < 50'], // response should be < 50ms
+  },
 };
 
 export default function testProducts() {
@@ -38,4 +38,4 @@ export default function testProducts() {
     ErrorCount.add(1);
   }
   sleep(1);
-};
+}

@@ -80,7 +80,7 @@ CLUSTER Features USING features_pid;
 CLUSTER Styles USING styles_pid;
 CLUSTER Photos USING photos_sid;
 CLUSTER Skus USING skus_sid;
-CLUSTER Related using related_pid;
+CLUSTER Related USING related_pid;
 
 
 
