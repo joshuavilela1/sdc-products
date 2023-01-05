@@ -68,6 +68,7 @@ CREATE TABLE Related (
 
 -- Create Indices for each foreign key for quicker data retrieval
 
+CREATE INDEX products_pid on products(id);
 CREATE INDEX features_pid on features(product_id);
 CREATE INDEX styles_pid on styles(product_id);
 CREATE INDEX photos_sid on photos(styleId);
@@ -76,6 +77,7 @@ CREATE INDEX related_pid on related(current_product_id);
 
 -- Cluster the Indicices to reoder table based on the index
 
+CLUSTER Products USING products_pid;
 CLUSTER Features USING features_pid;
 CLUSTER Styles USING styles_pid;
 CLUSTER Photos USING photos_sid;
