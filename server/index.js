@@ -1,15 +1,14 @@
 require('dotenv').config();
 const express = require('express');
-const morgan = require('morgan');
+// const morgan = require('morgan'); // Removed morgan to decrease time to GET
 const cors = require('cors');
 const path = require('path');
 const productRouter = require('./routes.js');
 
 const app = express();
-// const productDB = require('./databases/')
 
 app.use(cors());
-app.use(morgan('dev'));
+// app.use(morgan('dev')); // Removed morgan to decrease time to GET
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(productRouter);
