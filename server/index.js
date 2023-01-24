@@ -8,7 +8,7 @@ const productRouter = require('./routes.js');
 const app = express();
 
 app.use(cors());
-// app.use(morgan('dev')); // Removed morgan to decrease time to GET
+app.use(morgan('dev')); // Removed morgan to decrease time to GET
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(productRouter);
