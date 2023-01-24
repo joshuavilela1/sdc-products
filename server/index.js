@@ -9,7 +9,7 @@ const app = express();
 // const productDB = require('./databases/')
 
 app.use(cors());
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(productRouter);
