@@ -47,4 +47,4 @@ These tables allow us to grab the necessary data needed for the product page of 
 
 ### Removing Nested Queries
 
-The first thing I did to improve the performance of the server was to reduce the use of nested queries as that would allow for more asynchronous events to occur which would result in slower response times and would add up as the RPS would increase for the system
+The first thing I did to improve the performance of the server was to reduce the use of nested queries as that would allow for less asynchronous events to occur which would result in faster response times as requests starts to increase on the server.
